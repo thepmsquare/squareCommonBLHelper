@@ -1,0 +1,36 @@
+{
+  "name": "squarecommonblhelper",
+  "version": "1.0.0",
+  "description": "helper for common bl for my projects.",
+  "main": "dist/index.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "",
+    "build": "tsc",
+    "dev": "tsc && node dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thepmsquare/squareCommonBLHelper"
+  },
+  "author": "thePmSquare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thepmsquare/squareCommonBLHelper/issues"
+  },
+  "homepage": "https://github.com/thepmsquare/squareCommonBLHelper#readme",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "squarecommons": "^1.0.5"
+  }
+}
