@@ -5,7 +5,6 @@ class GreetingCommonBL {
 
   async createGreetingV0(
     greetingIsAnonymous: boolean,
-    appId?: number,
     greetingAnonymousSenderName?: string,
     userId?: string,
     greetingText?: string
@@ -17,7 +16,6 @@ class GreetingCommonBL {
         "POST",
         undefined,
         {
-          app_id: appId,
           greeting_is_anonymous: greetingIsAnonymous,
           greeting_anonymous_sender_name: greetingAnonymousSenderName,
           user_id: userId,
