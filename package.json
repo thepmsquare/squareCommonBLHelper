@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "",
-    "build": "tsc",
+    "build": "rm -rf ./dist && tsc",
     "dev": "tsc && node dist/index.js"
   },
   "files": [
