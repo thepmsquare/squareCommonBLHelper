@@ -15,6 +15,10 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v1.0.2
+
+- replace user_id with accessToken from greeting -> createGreetingV0.
+
 ### v1.0.1
 
 - remove app_id from greeting -> createGreetingV0.

@@ -6,19 +6,26 @@ class GreetingCommonBL {
   async createGreetingV0(
     greetingIsAnonymous: boolean,
     greetingAnonymousSenderName?: string,
-    userId?: string,
+    accessToken?: string,
     greetingText?: string
   ) {
     try {
+      let headers;
+      if (accessToken) {
+        headers = {
+          access_token: accessToken,
+        };
+      } else {
+        headers = undefined;
+      }
       const data = await fetchJSONData(
         this.commonBLBaseURL,
         "create_greeting/v0",
         "POST",
-        undefined,
+        headers,
         {
           greeting_is_anonymous: greetingIsAnonymous,
           greeting_anonymous_sender_name: greetingAnonymousSenderName,
-          user_id: userId,
           greeting_text: greetingText,
         }
       );
