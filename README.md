@@ -15,6 +15,16 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v1.1.0
+
+- add AuthenticationCommonBL class with the following methods:
+  - logoutV0
+  - generateAccessTokenV0
+  - deleteUserV0
+  - updateUsernameV0
+  - updatePasswordV0
+  - getUserDetailsV0
+
 ### v1.0.3
 
 - experimental release.
