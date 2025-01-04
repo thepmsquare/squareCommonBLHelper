@@ -1,5 +1,7 @@
 import { fetchJSONData } from "squarecommons";
 
+import { CreateGreetingV0ResponseZ } from "./types/GreetingResponses.js";
+
 class GreetingCommonBL {
   constructor(private commonBLBaseURL: string = "http://localhost:10110") {}
 
@@ -29,7 +31,7 @@ class GreetingCommonBL {
           greeting_text: greetingText,
         }
       );
-      return data;
+      return CreateGreetingV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

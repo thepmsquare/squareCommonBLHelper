@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v1.2.0
+
+- add types in greeting:
+  - createGreetingV0
+
 ### v1.1.0
 
 - add AuthenticationCommonBL class with the following methods:
