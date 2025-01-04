@@ -34,7 +34,7 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "squarecommons": "^1.0.13",
+    "squarecommons": "^2.0.0",
     "zod": "^3.24.1"
   }
 }
