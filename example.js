@@ -14,3 +14,9 @@ let authenticationCommonBL = new AuthenticationCommonBL();
 console.log(
   await authenticationCommonBL.generateAccessTokenV0("dummy_refresh_token")
 );
+console.log(
+  await authenticationCommonBL.updateUsernameV0(
+    "dummy_access_token",
+    "new_username"
+  )
+);

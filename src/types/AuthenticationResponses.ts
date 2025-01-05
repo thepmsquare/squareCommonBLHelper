@@ -12,4 +12,20 @@ type GenerateAccessTokenV0Response = z.infer<
   typeof GenerateAccessTokenV0ResponseZ
 >;
 
-export { GenerateAccessTokenV0ResponseZ, GenerateAccessTokenV0Response };
+const UpdateUsernameV0ResponseZ = APIOutputZ.extend({
+  data: z.object({
+    main: z.object({
+      user_id: z.string(),
+      username: z.string(),
+    }),
+  }),
+});
+
+type UpdateUsernameV0Response = z.infer<typeof UpdateUsernameV0ResponseZ>;
+
+export {
+  GenerateAccessTokenV0ResponseZ,
+  GenerateAccessTokenV0Response,
+  UpdateUsernameV0ResponseZ,
+  UpdateUsernameV0Response,
+};

@@ -15,6 +15,12 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v1.4.0
+
+- AuthenticationCommonBL:
+  - bug fix in updateUsernameV0
+  - add types for updateUsernameV0
+
 ### v1.3.0
 
 - add types in AuthenticationCommonBL:

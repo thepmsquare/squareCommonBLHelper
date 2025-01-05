@@ -1,6 +1,9 @@
 import { fetchJSONData } from "squarecommons";
 
-import { GenerateAccessTokenV0ResponseZ } from "./types/AuthenticationResponses.js";
+import {
+  GenerateAccessTokenV0ResponseZ,
+  UpdateUsernameV0ResponseZ,
+} from "./types/AuthenticationResponses.js";
 
 class AuthenticationCommonBL {
   constructor(private commonBLBaseURL: string = "http://localhost:10110") {}
@@ -80,11 +83,11 @@ class AuthenticationCommonBL {
         // headers
         { access_token: accessToken },
         // body
-        { new_username: newUsername },
+        undefined,
         // query params
-        undefined
+        { new_username: newUsername }
       );
-      return data;
+      return UpdateUsernameV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
