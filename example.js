@@ -20,3 +20,10 @@ console.log(
     "new_username"
   )
 );
+console.log(
+  await authenticationCommonBL.updatePasswordV0(
+    "dummy_access_token",
+    "oldPassword",
+    "newPassword"
+  )
+);

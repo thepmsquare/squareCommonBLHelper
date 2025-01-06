@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v1.5.0
+
+- AuthenticationCommonBL:
+  - add types for updatePasswordV0
+
 ### v1.4.0
 
 - AuthenticationCommonBL:

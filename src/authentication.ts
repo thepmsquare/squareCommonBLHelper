@@ -2,6 +2,7 @@ import { fetchJSONData } from "squarecommons";
 
 import {
   GenerateAccessTokenV0ResponseZ,
+  UpdatePasswordV0ResponseZ,
   UpdateUsernameV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
 
@@ -112,7 +113,7 @@ class AuthenticationCommonBL {
         // query params
         undefined
       );
-      return data;
+      return UpdatePasswordV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

@@ -23,9 +23,17 @@ const UpdateUsernameV0ResponseZ = APIOutputZ.extend({
 
 type UpdateUsernameV0Response = z.infer<typeof UpdateUsernameV0ResponseZ>;
 
+const UpdatePasswordV0ResponseZ = APIOutputZ.extend({
+  data: z.null(),
+});
+
+type UpdatePasswordV0Response = z.infer<typeof UpdatePasswordV0ResponseZ>;
+
 export {
   GenerateAccessTokenV0ResponseZ,
   GenerateAccessTokenV0Response,
   UpdateUsernameV0ResponseZ,
   UpdateUsernameV0Response,
+  UpdatePasswordV0ResponseZ,
+  UpdatePasswordV0Response,
 };
