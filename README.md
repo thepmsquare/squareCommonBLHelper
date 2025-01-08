@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v1.6.0
+
+- AuthenticationCommonBL:
+  - add types for getUserDetailsV0
+
 ### v1.5.0
 
 - AuthenticationCommonBL:

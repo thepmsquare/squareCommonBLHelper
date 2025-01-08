@@ -29,6 +29,26 @@ const UpdatePasswordV0ResponseZ = APIOutputZ.extend({
 
 type UpdatePasswordV0Response = z.infer<typeof UpdatePasswordV0ResponseZ>;
 
+const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
+  data: z.object({
+    main: z.object({
+      user_id: z.string(),
+      credentials: z.object({
+        username: z.string(),
+      }),
+      apps: z.array(z.number()),
+      sessions: z.array(
+        z.object({
+          app_id: z.number(),
+          active_sessions: z.number(),
+        })
+      ),
+    }),
+  }),
+});
+
+type GetUserDetailsV0Response = z.infer<typeof GetUserDetailsV0ResponseZ>;
+
 export {
   GenerateAccessTokenV0ResponseZ,
   GenerateAccessTokenV0Response,
@@ -36,4 +56,6 @@ export {
   UpdateUsernameV0Response,
   UpdatePasswordV0ResponseZ,
   UpdatePasswordV0Response,
+  GetUserDetailsV0ResponseZ,
+  GetUserDetailsV0Response,
 };

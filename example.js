@@ -27,3 +27,6 @@ console.log(
     "newPassword"
   )
 );
+console.log(
+  await authenticationCommonBL.getUserDetailsV0("dummy_access_token")
+);
