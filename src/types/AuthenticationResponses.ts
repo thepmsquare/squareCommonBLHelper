@@ -49,6 +49,12 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
 
 type GetUserDetailsV0Response = z.infer<typeof GetUserDetailsV0ResponseZ>;
 
+const LogoutV0Z = APIOutputZ.extend({
+  data: z.null(),
+});
+
+type LogoutV0 = z.infer<typeof LogoutV0Z>;
+
 export {
   GenerateAccessTokenV0ResponseZ,
   GenerateAccessTokenV0Response,
@@ -58,4 +64,6 @@ export {
   UpdatePasswordV0Response,
   GetUserDetailsV0ResponseZ,
   GetUserDetailsV0Response,
+  LogoutV0,
+  LogoutV0Z,
 };
