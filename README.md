@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v1.8.0
+
+- AuthenticationCommonBL:
+  - add types for deleteUserV0
+
 ### v1.7.0
 
 - AuthenticationCommonBL:

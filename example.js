@@ -30,4 +30,8 @@ console.log(
 console.log(
   await authenticationCommonBL.getUserDetailsV0("dummy_access_token")
 );
-console.log(await authenticationCommonBL.logoutV0("dumm_refresh_token"));
+console.log(await authenticationCommonBL.logoutV0("dummy_refresh_token"));
+
+console.log(
+  await authenticationCommonBL.deleteUserV0("dummy_access_token", "password")
+);

@@ -1,6 +1,7 @@
 import { fetchJSONData } from "squarecommons";
 
 import {
+  DeleteUserV0Z,
   GenerateAccessTokenV0ResponseZ,
   GetUserDetailsV0ResponseZ,
   LogoutV0Z,
@@ -69,7 +70,7 @@ class AuthenticationCommonBL {
         // query params
         undefined
       );
-      return data;
+      return DeleteUserV0Z.parse(data);
     } catch (error) {
       throw error;
     }

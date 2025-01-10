@@ -54,7 +54,11 @@ const LogoutV0Z = APIOutputZ.extend({
 });
 
 type LogoutV0 = z.infer<typeof LogoutV0Z>;
+const DeleteUserV0Z = APIOutputZ.extend({
+  data: z.null(),
+});
 
+type DeleteUserV0 = z.infer<typeof DeleteUserV0Z>;
 export {
   GenerateAccessTokenV0ResponseZ,
   GenerateAccessTokenV0Response,
@@ -66,4 +70,6 @@ export {
   GetUserDetailsV0Response,
   LogoutV0,
   LogoutV0Z,
+  DeleteUserV0,
+  DeleteUserV0Z,
 };
