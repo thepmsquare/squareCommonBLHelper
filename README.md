@@ -17,7 +17,7 @@ helper for common bl for my projects.
 
 ### v2.0.0
 
-- remove UtilsCommonBL:
+- remove UtilsCommonBL
 
 ### v1.8.0
 
