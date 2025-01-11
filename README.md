@@ -15,6 +15,10 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v2.0.0
+
+- remove UtilsCommonBL:
+
 ### v1.8.0
 
 - AuthenticationCommonBL:
