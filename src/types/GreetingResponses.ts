@@ -2,9 +2,9 @@ import { APIOutputZ } from "squarecommons";
 import { z } from "zod";
 
 const CreateGreetingV0ResponseZ = APIOutputZ.extend({
-  data: z.object({
+  data: z.strictObject({
     main: z.array(
-      z.object({
+      z.strictObject({
         greeting_anonymous_sender_name: z.string().nullable(),
         user_id: z.string().nullable(),
         greeting_id: z.number(),

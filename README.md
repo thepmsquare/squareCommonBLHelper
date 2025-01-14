@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v2.0.1
+
+- use strictObject in zod.
+- export types in index file.
+
 ### v2.0.0
 
 - remove UtilsCommonBL
