@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v3.0.0
+
+- AuthenticationCommonBL:
+  - remove generateAccessTokenV0, logoutV0.
+
 ### v2.0.1
 
 - use strictObject in zod.

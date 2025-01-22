@@ -1,17 +1,6 @@
 import { APIOutputZ } from "squarecommons";
 import { z } from "zod";
 
-const GenerateAccessTokenV0ResponseZ = APIOutputZ.extend({
-  data: z.strictObject({
-    main: z.strictObject({
-      access_token: z.string(),
-    }),
-  }),
-});
-type GenerateAccessTokenV0Response = z.infer<
-  typeof GenerateAccessTokenV0ResponseZ
->;
-
 const UpdateUsernameV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z.strictObject({
@@ -49,27 +38,18 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
 
 type GetUserDetailsV0Response = z.infer<typeof GetUserDetailsV0ResponseZ>;
 
-const LogoutV0Z = APIOutputZ.extend({
-  data: z.null(),
-});
-
-type LogoutV0 = z.infer<typeof LogoutV0Z>;
 const DeleteUserV0Z = APIOutputZ.extend({
   data: z.null(),
 });
 
 type DeleteUserV0 = z.infer<typeof DeleteUserV0Z>;
 export {
-  GenerateAccessTokenV0ResponseZ,
-  GenerateAccessTokenV0Response,
   UpdateUsernameV0ResponseZ,
   UpdateUsernameV0Response,
   UpdatePasswordV0ResponseZ,
   UpdatePasswordV0Response,
   GetUserDetailsV0ResponseZ,
   GetUserDetailsV0Response,
-  LogoutV0,
-  LogoutV0Z,
   DeleteUserV0,
   DeleteUserV0Z,
 };

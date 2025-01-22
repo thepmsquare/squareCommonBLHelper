@@ -2,9 +2,7 @@ import { fetchJSONData } from "squarecommons";
 
 import {
   DeleteUserV0Z,
-  GenerateAccessTokenV0ResponseZ,
   GetUserDetailsV0ResponseZ,
-  LogoutV0Z,
   UpdatePasswordV0ResponseZ,
   UpdateUsernameV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
@@ -12,48 +10,6 @@ import {
 class AuthenticationCommonBL {
   constructor(private commonBLBaseURL: string = "http://localhost:10110") {}
 
-  async logoutV0(refreshToken: string) {
-    try {
-      const data = await fetchJSONData(
-        // base url
-        this.commonBLBaseURL,
-        // endpoint
-        "logout/v0",
-        // method
-        "DELETE",
-        // headers
-        { refresh_token: refreshToken },
-        // body
-        undefined,
-        // query params
-        undefined
-      );
-      return LogoutV0Z.parse(data);
-    } catch (error) {
-      throw error;
-    }
-  }
-  async generateAccessTokenV0(refreshToken: string) {
-    try {
-      const data = await fetchJSONData(
-        // base url
-        this.commonBLBaseURL,
-        // endpoint
-        "generate_access_token/v0",
-        // method
-        "GET",
-        // headers
-        { refresh_token: refreshToken },
-        // body
-        undefined,
-        // query params
-        undefined
-      );
-      return GenerateAccessTokenV0ResponseZ.parse(data);
-    } catch (error) {
-      throw error;
-    }
-  }
   async deleteUserV0(accessToken: string, password: string) {
     try {
       const data = await fetchJSONData(
