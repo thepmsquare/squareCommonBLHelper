@@ -25,10 +25,10 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
       credentials: z.strictObject({
         username: z.string(),
       }),
-      apps: z.array(z.number()),
+      apps: z.array(z.string()),
       sessions: z.array(
         z.strictObject({
-          app_id: z.number(),
+          app_name: z.string(),
           active_sessions: z.number(),
         })
       ),

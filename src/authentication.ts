@@ -4,7 +4,7 @@ import {
   DeleteUserV0Z,
   GetUserDetailsV0ResponseZ,
   UpdatePasswordV0ResponseZ,
-  UpdateUsernameV0ResponseZ,
+  UpdateUsernameV0ResponseZ
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationCommonBL {
