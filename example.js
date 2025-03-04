@@ -24,3 +24,4 @@ console.log(
 console.log(
   await authenticationCommonBL.deleteUserV0("dummy_access_token", "password")
 );
+console.log(await authenticationCommonBL.logoutAllV0("dummy_access_token"));

@@ -3,8 +3,9 @@ import { fetchJSONData } from "squarecommons";
 import {
   DeleteUserV0Z,
   GetUserDetailsV0ResponseZ,
+  LogoutAllV0Z,
   UpdatePasswordV0ResponseZ,
-  UpdateUsernameV0ResponseZ
+  UpdateUsernameV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationCommonBL {
@@ -94,6 +95,27 @@ class AuthenticationCommonBL {
         undefined
       );
       return GetUserDetailsV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async logoutAllV0(accessToken: string) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "logout/all/v0",
+        // method
+        "DELETE",
+        // headers
+        { access_token: accessToken },
+        // body
+        undefined,
+        // query params
+        undefined
+      );
+      return LogoutAllV0Z.parse(data);
     } catch (error) {
       throw error;
     }
