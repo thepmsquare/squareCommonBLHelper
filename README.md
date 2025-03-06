@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v4.2.0
+
+- AuthenticationCommonBL:
+  - add logoutAppsV0.
+
 ### v4.1.0
 
 - AuthenticationCommonBL:

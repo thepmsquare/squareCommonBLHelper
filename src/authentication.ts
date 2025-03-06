@@ -4,6 +4,7 @@ import {
   DeleteUserV0Z,
   GetUserDetailsV0ResponseZ,
   LogoutAllV0Z,
+  LogoutAppsV0Z,
   UpdatePasswordV0ResponseZ,
   UpdateUsernameV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
@@ -116,6 +117,27 @@ class AuthenticationCommonBL {
         undefined
       );
       return LogoutAllV0Z.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async logoutAppsV0(accessToken: string, appNames: string[]) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "logout/apps/v0",
+        // method
+        "DELETE",
+        // headers
+        { access_token: accessToken },
+        // body
+        { app_names: appNames },
+        // query params
+        undefined
+      );
+      return LogoutAppsV0Z.parse(data);
     } catch (error) {
       throw error;
     }
