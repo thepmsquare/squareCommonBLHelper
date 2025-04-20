@@ -1,5 +1,5 @@
 import { APIOutputZ } from "squarecommons";
-import { z } from "zod";
+import { nullable, z } from "zod";
 
 const UpdateUsernameV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
@@ -22,8 +22,14 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z.strictObject({
       user_id: z.string(),
-      credentials: z.strictObject({
-        username: z.string(),
+      profile: z.strictObject({
+        user_profile_id: z.number(),
+        user_profile_photo_storage_token: z.string().nullable(),
+        user_profile_email: z.string().nullable(),
+        user_profile_phone_number: z.string().nullable(),
+        user_profile_first_name: z.string().nullable(),
+        user_profile_last_name: z.string().nullable(),
+        user_profile_username: z.string(),
       }),
       apps: z.array(z.string()),
       sessions: z.array(

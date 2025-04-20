@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v5.0.0
+
+- AuthenticationCommonBL:
+  - change type for GetUserDetailsV0ResponseZ to make it compatible with latest changes.
+
 ### v4.2.0
 
 - AuthenticationCommonBL:
