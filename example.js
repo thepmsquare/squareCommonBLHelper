@@ -28,3 +28,4 @@ console.log(await authenticationCommonBL.logoutAllV0("dummy_access_token"));
 console.log(
   await authenticationCommonBL.logoutAppsV0("dummy_access_token", ["test"])
 );
+console.log(await authenticationCommonBL.getProfilePhoto("dummy_access_token"));

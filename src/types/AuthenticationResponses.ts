@@ -1,5 +1,5 @@
 import { APIOutputZ } from "squarecommons";
-import { nullable, z } from "zod";
+import { z } from "zod";
 
 const UpdateUsernameV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({

@@ -1,4 +1,4 @@
-import { fetchJSONData } from "squarecommons";
+import { fetchFileData, fetchJSONData } from "squarecommons";
 
 import {
   DeleteUserV0Z,
@@ -138,6 +138,27 @@ class AuthenticationCommonBL {
         undefined
       );
       return LogoutAppsV0Z.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getUserProfilePhoto(accessToken: string) {
+    try {
+      const data = await fetchFileData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "get_user_profile_photo/v0",
+        // method
+        "GET",
+        // headers
+        { access_token: accessToken },
+        // body
+        undefined,
+        // query params
+        undefined
+      );
+      return data;
     } catch (error) {
       throw error;
     }
