@@ -163,21 +163,17 @@ class AuthenticationCommonBL {
       throw error;
     }
   }
-  async updateUserProfilePhotoV0(
-    accessToken: string,
-    profilePhoto?: File
-  ) {
+  async updateUserProfilePhotoV0(accessToken: string, profilePhoto?: File) {
     try {
-
       const MAX_SIZE = 5 * 1024 * 1024; // 5 MiB
-      const ALLOWED_TYPES = ['image/png', 'image/jpeg'];
+      const ALLOWED_TYPES = ["image/png", "image/jpeg"];
 
       if (profilePhoto) {
         if (!ALLOWED_TYPES.includes(profilePhoto.type)) {
-          throw new Error('invalid file type: only png or jpeg allowed');
+          throw new Error("invalid file type: only png or jpeg allowed");
         }
         if (profilePhoto.size > MAX_SIZE) {
-          throw new Error('file too large: must be under 5 MiB');
+          throw new Error("file too large: must be under 5 MiB");
         }
       }
       const formData = new FormData();
@@ -188,7 +184,7 @@ class AuthenticationCommonBL {
         // base url
         this.commonBLBaseURL,
         // endpoint
-        "update_user_profile_photo/v0",
+        "update_profile_photo/v0",
         // method
         "PATCH",
         // headers

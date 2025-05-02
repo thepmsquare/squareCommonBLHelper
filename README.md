@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v5.2.1
+
+- AuthenticationCommonBL:
+  - fix url in updateUserProfilePhotoV0.
+
 ### v5.2.0
 
 - AuthenticationCommonBL:
