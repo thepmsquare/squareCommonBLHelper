@@ -19,11 +19,12 @@ helper for common bl for my projects.
 
 - AuthenticationCommonBL:
   - add updateUserProfilePhotoV0.
+  - rename getUserProfilePhoto to getUserProfilePhotoV0.
 
 ### v5.1.0
 
 - AuthenticationCommonBL:
-  - add getUserProfilePhotoV0.
+  - add getUserProfilePhoto.
 
 ### v5.0.0
 
