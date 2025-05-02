@@ -142,7 +142,7 @@ class AuthenticationCommonBL {
       throw error;
     }
   }
-  async getUserProfilePhoto(accessToken: string) {
+  async getUserProfilePhotoV0(accessToken: string) {
     try {
       const data = await fetchFileData(
         // base url
@@ -155,6 +155,34 @@ class AuthenticationCommonBL {
         { access_token: accessToken },
         // body
         undefined,
+        // query params
+        undefined
+      );
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async updateUserProfilePhotoV0(
+    accessToken: string,
+    profilePhoto?: File | Blob
+  ) {
+    try {
+      let formData = new FormData();
+      if (profilePhoto) {
+        formData.append("profile_photo", profilePhoto);
+      }
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "update_user_profile_photo/v0",
+        // method
+        "PATCH",
+        // headers
+        { access_token: accessToken },
+        // body
+        formData,
         // query params
         undefined
       );
