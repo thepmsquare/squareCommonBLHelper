@@ -165,10 +165,22 @@ class AuthenticationCommonBL {
   }
   async updateUserProfilePhotoV0(
     accessToken: string,
-    profilePhoto?: File | Blob
+    profilePhoto?: File
   ) {
     try {
-      let formData = new FormData();
+
+      const MAX_SIZE = 5 * 1024 * 1024; // 5 MiB
+      const ALLOWED_TYPES = ['image/png', 'image/jpeg'];
+
+      if (profilePhoto) {
+        if (!ALLOWED_TYPES.includes(profilePhoto.type)) {
+          throw new Error('invalid file type: only png or jpeg allowed');
+        }
+        if (profilePhoto.size > MAX_SIZE) {
+          throw new Error('file too large: must be under 5 MiB');
+        }
+      }
+      const formData = new FormData();
       if (profilePhoto) {
         formData.append("profile_photo", profilePhoto);
       }
