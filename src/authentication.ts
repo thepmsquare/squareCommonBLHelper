@@ -2,6 +2,7 @@ import { fetchFileData, fetchJSONData } from "squarecommons";
 
 import {
   DeleteUserV0Z,
+  GenerateAccountBackupCodeZ,
   GetUserDetailsV0ResponseZ,
   LogoutAllV0Z,
   LogoutAppsV0Z,
@@ -206,5 +207,28 @@ class AuthenticationCommonBL {
       throw error;
     }
   }
+
+  async generateAccountBackupCodesV0(accessToken: string) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "generate_account_backup_codes/v0",
+        // method
+        "POST",
+        // headers
+        { access_token: accessToken },
+        // body
+        undefined,
+        // query params
+        undefined
+      );
+      return GenerateAccountBackupCodeZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
+
 export { AuthenticationCommonBL };

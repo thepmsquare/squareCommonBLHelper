@@ -60,6 +60,18 @@ const LogoutAppsV0Z = APIOutputZ.extend({
 });
 
 type LogoutAppsV0 = z.infer<typeof LogoutAppsV0Z>;
+
+const GenerateAccountBackupCodeZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.strictObject({
+      user_id: z.string(),
+      backup_codes: z.array(z.string()),
+    }),
+  }),
+});
+
+type GenerateAccountBackupCode = z.infer<typeof GenerateAccountBackupCodeZ>;
+
 export {
   UpdateUsernameV0ResponseZ,
   UpdateUsernameV0Response,
@@ -73,4 +85,6 @@ export {
   LogoutAllV0Z,
   LogoutAppsV0,
   LogoutAppsV0Z,
+  GenerateAccountBackupCode,
+  GenerateAccountBackupCodeZ,
 };
