@@ -57,7 +57,9 @@ class AuthenticationCommonBL {
   async updatePasswordV0(
     accessToken: string,
     oldPassword: string,
-    newPassword: string
+    newPassword: string,
+    logoutOtherSessions: boolean = false,
+    preserveSessionRefreshToken?: string
   ) {
     try {
       const data = await fetchJSONData(
@@ -70,7 +72,12 @@ class AuthenticationCommonBL {
         // headers
         { access_token: accessToken },
         // body
-        { old_password: oldPassword, new_password: newPassword },
+        {
+          old_password: oldPassword,
+          new_password: newPassword,
+          logout_other_sessions: logoutOtherSessions,
+          preserve_session_refresh_token: preserveSessionRefreshToken,
+        },
         // query params
         undefined
       );
