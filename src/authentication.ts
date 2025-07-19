@@ -7,7 +7,7 @@ import {
   LogoutAllV0Z,
   LogoutAppsV0Z,
   UpdatePasswordV0ResponseZ,
-  UpdateUsernameV0ResponseZ,
+  UpdateUsernameV0ResponseZ
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationCommonBL {
@@ -21,7 +21,7 @@ class AuthenticationCommonBL {
         // endpoint
         "delete_user/v0",
         // method
-        "DELETE",
+        "POST",
         // headers
         { access_token: accessToken },
         // body
