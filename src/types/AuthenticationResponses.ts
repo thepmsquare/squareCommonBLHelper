@@ -72,6 +72,29 @@ const GenerateAccountBackupCodeZ = APIOutputZ.extend({
 
 type GenerateAccountBackupCode = z.infer<typeof GenerateAccountBackupCodeZ>;
 
+const updateProfileDetailsZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.array(
+      z.strictObject({
+        user_profile_photo_storage_token: z.string().nullable(),
+        user_profile_email: z.string().nullable(),
+        user_profile_phone_number_country_code: z.string().nullable(),
+        user_profile_first_name: z.string().nullable(),
+        user_profile_last_name: z.string().nullable(),
+        user_id: z.string(),
+        user_profile_id: z.number(),
+        user_profile_email_verified: z.boolean().nullable(),
+        user_profile_phone_number: z.string().nullable(),
+      })
+    ),
+    affected_count: z.number(),
+  }),
+  message: z.string(),
+  log: z.nullable(z.any()),
+});
+
+type updateProfileDetails = z.infer<typeof updateProfileDetailsZ>;
+
 export {
   UpdateUsernameV0ResponseZ,
   UpdateUsernameV0Response,
@@ -87,4 +110,6 @@ export {
   LogoutAppsV0Z,
   GenerateAccountBackupCode,
   GenerateAccountBackupCodeZ,
+  updateProfileDetailsZ,
+  updateProfileDetails,
 };
