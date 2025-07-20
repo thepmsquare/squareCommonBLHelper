@@ -2,10 +2,12 @@ import { fetchFileData, fetchJSONData } from "squarecommons";
 
 import {
   DeleteUserV0Z,
+  GenerateAccountBackupCodeZ,
   GetUserDetailsV0ResponseZ,
   LogoutAllV0Z,
   LogoutAppsV0Z,
   UpdatePasswordV0ResponseZ,
+  updateProfileDetailsZ,
   UpdateUsernameV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
 
@@ -20,7 +22,7 @@ class AuthenticationCommonBL {
         // endpoint
         "delete_user/v0",
         // method
-        "DELETE",
+        "POST",
         // headers
         { access_token: accessToken },
         // body
@@ -206,5 +208,61 @@ class AuthenticationCommonBL {
       throw error;
     }
   }
+
+  async generateAccountBackupCodesV0(accessToken: string) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "generate_account_backup_codes/v0",
+        // method
+        "POST",
+        // headers
+        { access_token: accessToken },
+        // body
+        undefined,
+        // query params
+        undefined
+      );
+      return GenerateAccountBackupCodeZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async updateProfileDetailsV0(
+    accessToken: string,
+    firstName?: string,
+    lastName?: string,
+    email?: string,
+    phoneNumberCountryCode?: string,
+    phoneNumber?: string
+  ) {
+    try {
+      const queryParams: Record<string, string> = {};
+
+      if (firstName) queryParams["first_name"] = firstName;
+      if (lastName) queryParams["last_name"] = lastName;
+      if (email) queryParams["email"] = email;
+      if (phoneNumberCountryCode)
+        queryParams["phone_number_country_code"] = phoneNumberCountryCode;
+      if (phoneNumber) queryParams["phone_number"] = phoneNumber;
+
+      // Call API
+      const data = await fetchJSONData(
+        this.commonBLBaseURL,
+        "update_profile_details/v0",
+        "PATCH",
+        { access_token: accessToken },
+        undefined,
+        queryParams
+      );
+      return updateProfileDetailsZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
+
 export { AuthenticationCommonBL };

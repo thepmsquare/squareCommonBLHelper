@@ -19,6 +19,9 @@ helper for common bl for my projects.
 
 - AuthenticationCommonBL:
   - update parameters in updatePasswordV0.
+  - add generateAccountBackupCodesV0.
+  - method changed of deleteUserV0 from delete to post.
+  - add updateProfileDetailsV0
 
 ### v5.2.1
 
