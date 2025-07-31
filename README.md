@@ -15,10 +15,10 @@ helper for common bl for my projects.
 
 ## changelog
 
-### v5.3.0 (In-progress)
+### v6.0.0 (in progress)
 
 - AuthenticationCommonBL:
-  - update parameters in updatePasswordV0.
+  - **breaking change** remove updatePasswordV0.
   - add generateAccountBackupCodesV0.
   - method changed of deleteUserV0 from delete to post.
   - add updateProfileDetailsV0

@@ -6,7 +6,6 @@ import {
   GetUserDetailsV0ResponseZ,
   LogoutAllV0Z,
   LogoutAppsV0Z,
-  UpdatePasswordV0ResponseZ,
   updateProfileDetailsZ,
   UpdateUsernameV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
@@ -52,38 +51,6 @@ class AuthenticationCommonBL {
         { new_username: newUsername }
       );
       return UpdateUsernameV0ResponseZ.parse(data);
-    } catch (error) {
-      throw error;
-    }
-  }
-  async updatePasswordV0(
-    accessToken: string,
-    oldPassword: string,
-    newPassword: string,
-    logoutOtherSessions: boolean = false,
-    preserveSessionRefreshToken?: string
-  ) {
-    try {
-      const data = await fetchJSONData(
-        // base url
-        this.commonBLBaseURL,
-        // endpoint
-        "update_password/v0",
-        // method
-        "PATCH",
-        // headers
-        { access_token: accessToken },
-        // body
-        {
-          old_password: oldPassword,
-          new_password: newPassword,
-          logout_other_sessions: logoutOtherSessions,
-          preserve_session_refresh_token: preserveSessionRefreshToken,
-        },
-        // query params
-        undefined
-      );
-      return UpdatePasswordV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
