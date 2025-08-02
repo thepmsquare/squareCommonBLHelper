@@ -89,6 +89,16 @@ const updateProfileDetailsZ = APIOutputZ.extend({
 
 type updateProfileDetails = z.infer<typeof updateProfileDetailsZ>;
 
+const sendResetPasswordEmailV0ResponseZ = APIOutputZ.extend({
+  data: z.strictObject({
+    expires_at: z.string(),
+  }),
+});
+
+type sendResetPasswordEmailV0Response = z.infer<
+  typeof sendResetPasswordEmailV0ResponseZ
+>;
+
 export {
   UpdateUsernameV0ResponseZ,
   UpdateUsernameV0Response,
@@ -104,4 +114,6 @@ export {
   GenerateAccountBackupCodeZ,
   updateProfileDetailsZ,
   updateProfileDetails,
+  sendResetPasswordEmailV0ResponseZ,
+  sendResetPasswordEmailV0Response,
 };

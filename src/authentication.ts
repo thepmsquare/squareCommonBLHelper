@@ -6,6 +6,7 @@ import {
   GetUserDetailsV0ResponseZ,
   LogoutAllV0Z,
   LogoutAppsV0Z,
+  sendResetPasswordEmailV0ResponseZ,
   updateProfileDetailsZ,
   UpdateUsernameV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
@@ -226,6 +227,27 @@ class AuthenticationCommonBL {
         queryParams
       );
       return updateProfileDetailsZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async sendResetPasswordEmailV0(username: string) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "send_reset_password_email/v0",
+        // method
+        "POST",
+        // headers
+        undefined,
+        // body
+        { username: username },
+        // query params
+        undefined
+      );
+      return sendResetPasswordEmailV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

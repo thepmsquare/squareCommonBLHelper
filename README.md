@@ -21,7 +21,8 @@ helper for common bl for my projects.
   - **breaking change** remove updatePasswordV0.
   - add generateAccountBackupCodesV0.
   - method changed of deleteUserV0 from delete to post.
-  - add updateProfileDetailsV0
+  - add updateProfileDetailsV0.
+  - add sendResetPasswordEmailV0
 
 ### v5.2.1
 
