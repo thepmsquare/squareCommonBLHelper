@@ -219,11 +219,17 @@ class AuthenticationCommonBL {
 
       // Call API
       const data = await fetchJSONData(
+        // base url
         this.commonBLBaseURL,
+        // endpoint
         "update_profile_details/v0",
+        // method
         "PATCH",
+        // headers
         { access_token: accessToken },
+        // body
         undefined,
+        // query params
         queryParams
       );
       return updateProfileDetailsZ.parse(data);

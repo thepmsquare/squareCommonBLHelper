@@ -32,3 +32,9 @@ console.log(await authenticationCommonBL.getProfilePhoto("dummy_access_token"));
 console.log(
   await authenticationCommonBL.sendResetPasswordEmailV0("dummy_username")
 );
+console.log(
+  await authenticationCommonBL.updateProfileDetailsV0(
+    "dummy_access_token",
+    "first_name"
+  )
+);
