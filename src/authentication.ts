@@ -6,9 +6,11 @@ import {
   GetUserDetailsV0ResponseZ,
   LogoutAllV0Z,
   LogoutAppsV0Z,
+  RecoveryMethodEnum,
   sendResetPasswordEmailV0ResponseZ,
   updateProfileDetailsZ,
   UpdateUsernameV0ResponseZ,
+  updateUserRecoveryMethodsV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationCommonBL {
@@ -254,6 +256,40 @@ class AuthenticationCommonBL {
         undefined
       );
       return sendResetPasswordEmailV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async updateUserRecoveryMethodsV0(
+    accessToken: string,
+    recoveryMethodsToAdd?: RecoveryMethodEnum[],
+    recoveryMethodsToRemove?: RecoveryMethodEnum[]
+  ) {
+    try {
+      if (!recoveryMethodsToAdd) {
+        recoveryMethodsToAdd = [];
+      }
+      if (!recoveryMethodsToRemove) {
+        recoveryMethodsToRemove = [];
+      }
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "update_user_recovery_methods/v0",
+        // method
+        "PATCH",
+        // headers
+        { access_token: accessToken },
+        // body
+        undefined,
+        // query params
+        {
+          recovery_methods_to_add: recoveryMethodsToAdd.join(","),
+          recovery_methods_to_remove: recoveryMethodsToRemove.join(","),
+        }
+      );
+      return updateUserRecoveryMethodsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

@@ -99,6 +99,17 @@ type sendResetPasswordEmailV0Response = z.infer<
   typeof sendResetPasswordEmailV0ResponseZ
 >;
 
+const RecoveryMethodEnumZ = z.enum(["EMAIL", "BACKUP_CODE"]);
+type RecoveryMethodEnum = z.infer<typeof RecoveryMethodEnumZ>;
+
+const updateUserRecoveryMethodsV0ResponseZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.array(RecoveryMethodEnumZ),
+  }),
+});
+type updateUserRecoveryMethodsV0Response = z.infer<
+  typeof updateUserRecoveryMethodsV0ResponseZ
+>;
 export {
   UpdateUsernameV0ResponseZ,
   UpdateUsernameV0Response,
@@ -116,4 +127,8 @@ export {
   updateProfileDetails,
   sendResetPasswordEmailV0ResponseZ,
   sendResetPasswordEmailV0Response,
+  RecoveryMethodEnumZ,
+  RecoveryMethodEnum,
+  updateUserRecoveryMethodsV0ResponseZ,
+  updateUserRecoveryMethodsV0Response,
 };

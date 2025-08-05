@@ -38,3 +38,9 @@ console.log(
     "first_name"
   )
 );
+console.log(
+  await authenticationCommonBL.updateUserRecoveryMethodsV0(
+    "dummy_access_token",
+    ["BACKUP_CODE"]
+  )
+);
