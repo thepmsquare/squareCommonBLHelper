@@ -24,6 +24,7 @@ helper for common bl for my projects.
   - add updateProfileDetailsV0.
   - add sendResetPasswordEmailV0.
   - add updateUserRecoveryMethodsV0.
+  - add sendVerificationEmailV0.
 
 ### v5.2.1
 

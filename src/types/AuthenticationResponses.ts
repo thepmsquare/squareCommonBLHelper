@@ -110,6 +110,18 @@ const updateUserRecoveryMethodsV0ResponseZ = APIOutputZ.extend({
 type updateUserRecoveryMethodsV0Response = z.infer<
   typeof updateUserRecoveryMethodsV0ResponseZ
 >;
+
+const sendVerificationEmailV0ResponseZ = APIOutputZ.extend({
+  data: z.nullable(
+    z.strictObject({
+      expires_at: z.string(),
+    })
+  ),
+});
+type sendVerificationEmailV0Response = z.infer<
+  typeof sendVerificationEmailV0ResponseZ
+>;
+
 export {
   UpdateUsernameV0ResponseZ,
   UpdateUsernameV0Response,
@@ -131,4 +143,6 @@ export {
   RecoveryMethodEnum,
   updateUserRecoveryMethodsV0ResponseZ,
   updateUserRecoveryMethodsV0Response,
+  sendVerificationEmailV0ResponseZ,
+  sendVerificationEmailV0Response,
 };

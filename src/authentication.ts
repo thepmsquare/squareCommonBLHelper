@@ -8,6 +8,7 @@ import {
   LogoutAppsV0Z,
   RecoveryMethodEnum,
   sendResetPasswordEmailV0ResponseZ,
+  sendVerificationEmailV0ResponseZ,
   updateProfileDetailsZ,
   UpdateUsernameV0ResponseZ,
   updateUserRecoveryMethodsV0ResponseZ,
@@ -290,6 +291,27 @@ class AuthenticationCommonBL {
         }
       );
       return updateUserRecoveryMethodsV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async sendVerificationEmailV0(accessToken: string) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "send_verification_email/v0",
+        // method
+        "POST",
+        // headers
+        { access_token: accessToken },
+        // body
+        undefined,
+        // query params
+        undefined
+      );
+      return sendVerificationEmailV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

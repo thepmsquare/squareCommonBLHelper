@@ -44,3 +44,6 @@ console.log(
     ["BACKUP_CODE"]
   )
 );
+console.log(
+  await authenticationCommonBL.sendVerificationEmailV0("dummy_access_token")
+);
