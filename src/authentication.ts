@@ -12,6 +12,7 @@ import {
   updateProfileDetailsZ,
   UpdateUsernameV0ResponseZ,
   updateUserRecoveryMethodsV0ResponseZ,
+  validateEmailVerificationCodeV0ResponseZ
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationCommonBL {
@@ -312,6 +313,30 @@ class AuthenticationCommonBL {
         undefined
       );
       return sendVerificationEmailV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async validateEmailVerificationCodeV0(
+    accessToken: string,
+    verificationCode: string
+  ) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "validate_email_verification_code/v0",
+        // method
+        "POST",
+        // headers
+        { access_token: accessToken },
+        // body
+        { verification_code: verificationCode },
+        // query params
+        undefined
+      );
+      return validateEmailVerificationCodeV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

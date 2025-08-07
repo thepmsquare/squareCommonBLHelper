@@ -122,6 +122,17 @@ type sendVerificationEmailV0Response = z.infer<
   typeof sendVerificationEmailV0ResponseZ
 >;
 
+const validateEmailVerificationCodeV0ResponseZ = APIOutputZ.extend({
+  data: z.nullable(
+    z.strictObject({
+      user_profile_email_verified: z.string(),
+    })
+  ),
+});
+type validateEmailVerificationCodeV0Response = z.infer<
+  typeof validateEmailVerificationCodeV0ResponseZ
+>;
+
 export {
   UpdateUsernameV0ResponseZ,
   UpdateUsernameV0Response,
@@ -145,4 +156,6 @@ export {
   updateUserRecoveryMethodsV0Response,
   sendVerificationEmailV0ResponseZ,
   sendVerificationEmailV0Response,
+  validateEmailVerificationCodeV0ResponseZ,
+  validateEmailVerificationCodeV0Response,
 };

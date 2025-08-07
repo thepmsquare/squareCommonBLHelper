@@ -15,7 +15,7 @@ helper for common bl for my projects.
 
 ## changelog
 
-### v6.0.0 (in progress)
+### v6.0.0
 
 - AuthenticationCommonBL:
   - **breaking change** remove updatePasswordV0.
@@ -25,6 +25,7 @@ helper for common bl for my projects.
   - add sendResetPasswordEmailV0.
   - add updateUserRecoveryMethodsV0.
   - add sendVerificationEmailV0.
+  - add validateEmailVerificationCodeV0.
 
 ### v5.2.1
 
