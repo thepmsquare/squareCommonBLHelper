@@ -92,6 +92,7 @@ type updateProfileDetails = z.infer<typeof updateProfileDetailsZ>;
 const sendResetPasswordEmailV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     expires_at: z.string(),
+    cooldown_reset_at: z.string(),
   }),
 });
 
@@ -115,6 +116,7 @@ const sendVerificationEmailV0ResponseZ = APIOutputZ.extend({
   data: z.nullable(
     z.strictObject({
       expires_at: z.string(),
+      cooldown_reset_at: z.string(),
     })
   ),
 });

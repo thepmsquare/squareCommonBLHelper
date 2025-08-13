@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v6.1.0
+
+- AuthenticationCommonBL:
+  - update output types of sendResetPasswordEmailV0ResponseZ and sendVerificationEmailV0ResponseZ.
+
 ### v6.0.0
 
 - AuthenticationCommonBL:
