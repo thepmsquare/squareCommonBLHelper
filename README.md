@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v7.0.0
+
+- GreetingCommonBL:
+  - **breaking change**: replace createGreetingV0 with createAnonymousGreetingV0.
+
 ### v6.1.0
 
 - AuthenticationCommonBL:

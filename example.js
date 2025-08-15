@@ -1,7 +1,7 @@
 import { GreetingCommonBL, AuthenticationCommonBL } from "./dist/index.js";
 
 let greetingCommonBL = new GreetingCommonBL();
-console.log(await greetingCommonBL.createGreetingV0(true));
+console.log(await greetingCommonBL.createAnonymousGreetingV0(true));
 
 let authenticationCommonBL = new AuthenticationCommonBL();
 

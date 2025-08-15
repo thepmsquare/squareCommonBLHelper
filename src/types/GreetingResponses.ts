@@ -1,7 +1,7 @@
 import { APIOutputZ } from "squarecommons";
 import { z } from "zod";
 
-const CreateGreetingV0ResponseZ = APIOutputZ.extend({
+const CreateAnonymousGreetingV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z.array(
       z.strictObject({
@@ -15,6 +15,11 @@ const CreateGreetingV0ResponseZ = APIOutputZ.extend({
     ),
   }),
 });
-type CreateGreetingV0Response = z.infer<typeof CreateGreetingV0ResponseZ>;
+type CreateAnonymousGreetingV0Response = z.infer<
+  typeof CreateAnonymousGreetingV0ResponseZ
+>;
 
-export { CreateGreetingV0ResponseZ, CreateGreetingV0Response };
+export {
+  CreateAnonymousGreetingV0ResponseZ,
+  CreateAnonymousGreetingV0Response,
+};
