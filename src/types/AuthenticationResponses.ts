@@ -38,24 +38,24 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
 
 type GetUserDetailsV0Response = z.infer<typeof GetUserDetailsV0ResponseZ>;
 
-const DeleteUserV0Z = APIOutputZ.extend({
+const DeleteUserV0ResponseZ = APIOutputZ.extend({
   data: z.null(),
 });
 
-type DeleteUserV0 = z.infer<typeof DeleteUserV0Z>;
+type DeleteUserV0Response = z.infer<typeof DeleteUserV0ResponseZ>;
 
-const LogoutAllV0Z = APIOutputZ.extend({
+const LogoutAllV0ResponseZ = APIOutputZ.extend({
   data: z.null(),
 });
 
-type LogoutAllV0 = z.infer<typeof LogoutAllV0Z>;
-const LogoutAppsV0Z = APIOutputZ.extend({
+type LogoutAllV0Response = z.infer<typeof LogoutAllV0ResponseZ>;
+const LogoutAppsV0ResponseZ = APIOutputZ.extend({
   data: z.null(),
 });
 
-type LogoutAppsV0 = z.infer<typeof LogoutAppsV0Z>;
+type LogoutAppsV0Response = z.infer<typeof LogoutAppsV0ResponseZ>;
 
-const GenerateAccountBackupCodeZ = APIOutputZ.extend({
+const GenerateAccountBackupCodeV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z.strictObject({
       user_id: z.string(),
@@ -64,9 +64,11 @@ const GenerateAccountBackupCodeZ = APIOutputZ.extend({
   }),
 });
 
-type GenerateAccountBackupCode = z.infer<typeof GenerateAccountBackupCodeZ>;
+type GenerateAccountBackupCodeV0Response = z.infer<
+  typeof GenerateAccountBackupCodeV0ResponseZ
+>;
 
-const updateProfileDetailsZ = APIOutputZ.extend({
+const updateProfileDetailsV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z
       .array(
@@ -87,7 +89,9 @@ const updateProfileDetailsZ = APIOutputZ.extend({
   }),
 });
 
-type updateProfileDetails = z.infer<typeof updateProfileDetailsZ>;
+type updateProfileDetailsV0Response = z.infer<
+  typeof updateProfileDetailsV0ResponseZ
+>;
 
 const sendResetPasswordEmailV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
@@ -140,16 +144,16 @@ export {
   UpdateUsernameV0Response,
   GetUserDetailsV0ResponseZ,
   GetUserDetailsV0Response,
-  DeleteUserV0,
-  DeleteUserV0Z,
-  LogoutAllV0,
-  LogoutAllV0Z,
-  LogoutAppsV0,
-  LogoutAppsV0Z,
-  GenerateAccountBackupCode,
-  GenerateAccountBackupCodeZ,
-  updateProfileDetailsZ,
-  updateProfileDetails,
+  DeleteUserV0Response,
+  DeleteUserV0ResponseZ,
+  LogoutAllV0Response,
+  LogoutAllV0ResponseZ,
+  LogoutAppsV0Response,
+  LogoutAppsV0ResponseZ,
+  GenerateAccountBackupCodeV0Response,
+  GenerateAccountBackupCodeV0ResponseZ,
+  updateProfileDetailsV0ResponseZ,
+  updateProfileDetailsV0Response,
   sendResetPasswordEmailV0ResponseZ,
   sendResetPasswordEmailV0Response,
   RecoveryMethodEnumZ,

@@ -15,6 +15,16 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v8.0.0
+
+- AuthenticationCommonBL:
+  - **breaking change**, rename the following types to match the standard naming convention:
+    - DeleteUserV0ResponseZ
+    - LogoutAllV0ResponseZ
+    - LogoutAppsV0ResponseZ
+    - GenerateAccountBackupCodeV0ResponseZ
+    - updateProfileDetailsV0ResponseZ
+
 ### v7.0.0
 
 - GreetingCommonBL:

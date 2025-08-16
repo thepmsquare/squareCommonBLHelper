@@ -1,18 +1,18 @@
 import { fetchFileData, fetchJSONData } from "squarecommons";
 
 import {
-  DeleteUserV0Z,
-  GenerateAccountBackupCodeZ,
+  DeleteUserV0ResponseZ,
+  GenerateAccountBackupCodeV0ResponseZ,
   GetUserDetailsV0ResponseZ,
-  LogoutAllV0Z,
-  LogoutAppsV0Z,
+  LogoutAllV0ResponseZ,
+  LogoutAppsV0ResponseZ,
   RecoveryMethodEnum,
   sendResetPasswordEmailV0ResponseZ,
   sendVerificationEmailV0ResponseZ,
-  updateProfileDetailsZ,
+  updateProfileDetailsV0ResponseZ,
   UpdateUsernameV0ResponseZ,
   updateUserRecoveryMethodsV0ResponseZ,
-  validateEmailVerificationCodeV0ResponseZ
+  validateEmailVerificationCodeV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationCommonBL {
@@ -34,7 +34,7 @@ class AuthenticationCommonBL {
         // query params
         undefined
       );
-      return DeleteUserV0Z.parse(data);
+      return DeleteUserV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
@@ -97,7 +97,7 @@ class AuthenticationCommonBL {
         // query params
         undefined
       );
-      return LogoutAllV0Z.parse(data);
+      return LogoutAllV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
@@ -118,7 +118,7 @@ class AuthenticationCommonBL {
         // query params
         undefined
       );
-      return LogoutAppsV0Z.parse(data);
+      return LogoutAppsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
@@ -197,7 +197,7 @@ class AuthenticationCommonBL {
         // query params
         undefined
       );
-      return GenerateAccountBackupCodeZ.parse(data);
+      return GenerateAccountBackupCodeV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
@@ -236,7 +236,7 @@ class AuthenticationCommonBL {
         // query params
         queryParams
       );
-      return updateProfileDetailsZ.parse(data);
+      return updateProfileDetailsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
