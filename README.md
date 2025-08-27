@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v8.0.1
+
+- AuthenticationCommonBL:
+  - add username to GetUserDetailsV0ResponseZ.
+
 ### v8.0.0
 
 - AuthenticationCommonBL:

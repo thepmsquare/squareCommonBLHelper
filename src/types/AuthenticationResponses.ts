@@ -16,6 +16,7 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z.strictObject({
       user_id: z.string(),
+      username: z.string(),
       profile: z.strictObject({
         user_profile_id: z.number(),
         user_profile_photo_storage_token: z.string().nullable(),
