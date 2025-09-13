@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v9.0.0
+
+- AuthenticationCommonBL:
+  - **breaking change**: remove user_profile_username from GetUserDetailsV0ResponseZ.
+
 ### v8.0.1
 
 - AuthenticationCommonBL:

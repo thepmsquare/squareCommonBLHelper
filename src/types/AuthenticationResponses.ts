@@ -24,7 +24,6 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
         user_profile_phone_number: z.string().nullable(),
         user_profile_first_name: z.string().nullable(),
         user_profile_last_name: z.string().nullable(),
-        user_profile_username: z.string(),
       }),
       apps: z.array(z.string()),
       sessions: z.array(

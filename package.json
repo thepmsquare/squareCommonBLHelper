@@ -1,6 +1,6 @@
 {
   "name": "squarecommonblhelper",
-  "version": "8.0.1",
+  "version": "9.0.0",
   "description": "helper for common bl for my projects.",
   "main": "dist/index.js",
   "type": "module",
