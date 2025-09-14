@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v9.0.1
+
+- AuthenticationCommonBL:
+  - add user_profile_phone_number_country_code and user_profile_email_verified in GetUserDetailsV0ResponseZ.
+
 ### v9.0.0
 
 - AuthenticationCommonBL:
