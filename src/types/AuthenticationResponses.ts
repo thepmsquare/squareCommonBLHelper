@@ -34,6 +34,7 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
           active_sessions: z.number(),
         })
       ),
+      recovery_methods: z.record(z.string(), z.boolean()),
     }),
   }),
 });

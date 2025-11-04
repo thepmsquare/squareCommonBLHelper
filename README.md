@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v9.0.2
+
+- AuthenticationCommonBL:
+  - add recovery_methods in GetUserDetailsV0ResponseZ.
+
 ### v9.0.1
 
 - AuthenticationCommonBL:
