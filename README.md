@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v9.1.0
+
+- AuthenticationCommonBL:
+  - add email_verification_details in GetUserDetailsV0ResponseZ.
+
 ### v9.0.2
 
 - AuthenticationCommonBL:

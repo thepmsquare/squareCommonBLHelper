@@ -35,6 +35,9 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
         })
       ),
       recovery_methods: z.record(z.string(), z.boolean()),
+      email_verification_details: z
+        .strictObject({ expires_at: z.string(), cooldown_reset_at: z.string() })
+        .nullable(),
     }),
   }),
 });
