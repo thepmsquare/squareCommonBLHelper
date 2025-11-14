@@ -144,6 +144,15 @@ const validateEmailVerificationCodeV0ResponseZ = APIOutputZ.extend({
 type validateEmailVerificationCodeV0Response = z.infer<
   typeof validateEmailVerificationCodeV0ResponseZ
 >;
+const GetUserRecoveryMethodsV0ResponseZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.record(z.string(), z.boolean()),
+  }),
+});
+
+type GetUserRecoveryMethodsV0Response = z.infer<
+  typeof GetUserRecoveryMethodsV0ResponseZ
+>;
 
 export {
   UpdateUsernameV0ResponseZ,
@@ -170,4 +179,6 @@ export {
   sendVerificationEmailV0Response,
   validateEmailVerificationCodeV0ResponseZ,
   validateEmailVerificationCodeV0Response,
+  GetUserRecoveryMethodsV0ResponseZ,
+  GetUserRecoveryMethodsV0Response,
 };

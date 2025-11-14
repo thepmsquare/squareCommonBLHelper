@@ -4,6 +4,7 @@ import {
   DeleteUserV0ResponseZ,
   GenerateAccountBackupCodeV0ResponseZ,
   GetUserDetailsV0ResponseZ,
+  GetUserRecoveryMethodsV0ResponseZ,
   LogoutAllV0ResponseZ,
   LogoutAppsV0ResponseZ,
   RecoveryMethodEnum,
@@ -337,6 +338,28 @@ class AuthenticationCommonBL {
         undefined
       );
       return validateEmailVerificationCodeV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async getUserRecoveryMethodsV0(username: string) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "get_user_recovery_methods/v0",
+        // method
+        "GET",
+        // headers
+        undefined,
+        // body
+        undefined,
+        // query params
+        { username: username }
+      );
+      return GetUserRecoveryMethodsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
