@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v9.2.1
+
+- AuthenticationCommonBL:
+  - update type of GetUserDetailsV0ResponseZ and GetUserRecoveryMethodsV0ResponseZ to include RecoveryMethodEnumZ as key instead of random string.
+
 ### v9.2.0
 
 - AuthenticationCommonBL:

@@ -1,6 +1,9 @@
 import { APIOutputZ } from "squarecommons";
 import { z } from "zod";
 
+const RecoveryMethodEnumZ = z.enum(["EMAIL", "BACKUP_CODE"]);
+type RecoveryMethodEnum = z.infer<typeof RecoveryMethodEnumZ>;
+
 const UpdateUsernameV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z.strictObject({
@@ -34,7 +37,7 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
           active_sessions: z.number(),
         })
       ),
-      recovery_methods: z.record(z.string(), z.boolean()),
+      recovery_methods: z.record(RecoveryMethodEnumZ, z.boolean()),
       email_verification_details: z
         .strictObject({ expires_at: z.string(), cooldown_reset_at: z.string() })
         .nullable(),
@@ -110,9 +113,6 @@ type sendResetPasswordEmailV0Response = z.infer<
   typeof sendResetPasswordEmailV0ResponseZ
 >;
 
-const RecoveryMethodEnumZ = z.enum(["EMAIL", "BACKUP_CODE"]);
-type RecoveryMethodEnum = z.infer<typeof RecoveryMethodEnumZ>;
-
 const updateUserRecoveryMethodsV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z.array(RecoveryMethodEnumZ),
@@ -146,7 +146,7 @@ type validateEmailVerificationCodeV0Response = z.infer<
 >;
 const GetUserRecoveryMethodsV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
-    main: z.record(z.string(), z.boolean()),
+    main: z.record(RecoveryMethodEnumZ, z.boolean()),
   }),
 });
 
