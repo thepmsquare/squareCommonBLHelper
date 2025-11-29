@@ -288,8 +288,8 @@ class AuthenticationCommonBL {
         undefined,
         // query params
         {
-          recovery_methods_to_add: recoveryMethodsToAdd.join(","),
-          recovery_methods_to_remove: recoveryMethodsToRemove.join(","),
+          recovery_methods_to_add: recoveryMethodsToAdd,
+          recovery_methods_to_remove: recoveryMethodsToRemove,
         }
       );
       return updateUserRecoveryMethodsV0ResponseZ.parse(data);

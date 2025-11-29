@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v9.2.2
+
+- AuthenticationCommonBL:
+  - bugfix in updateUserRecoveryMethodsV0 query parameters (string[] instead of comma separated list).
+
 ### v9.2.1
 
 - AuthenticationCommonBL:
