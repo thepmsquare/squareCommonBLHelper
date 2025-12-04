@@ -285,12 +285,12 @@ class AuthenticationCommonBL {
         // headers
         { access_token: accessToken },
         // body
-        undefined,
-        // query params
         {
           recovery_methods_to_add: recoveryMethodsToAdd,
           recovery_methods_to_remove: recoveryMethodsToRemove,
-        }
+        },
+        // query params
+        undefined
       );
       return updateUserRecoveryMethodsV0ResponseZ.parse(data);
     } catch (error) {

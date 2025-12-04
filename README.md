@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v9.2.3
+
+- AuthenticationCommonBL:
+  - updateUserRecoveryMethodsV0 now compatible with square_common_bl>=6.0.0
+
 ### v9.2.2
 
 - AuthenticationCommonBL:
