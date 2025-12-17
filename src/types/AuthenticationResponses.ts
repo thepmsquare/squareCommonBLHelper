@@ -35,11 +35,18 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
         z.strictObject({
           app_name: z.string(),
           active_sessions: z.number(),
-        })
+        }),
       ),
       recovery_methods: z.record(RecoveryMethodEnumZ, z.boolean()),
       email_verification_details: z
         .strictObject({ expires_at: z.string(), cooldown_reset_at: z.string() })
+        .nullable(),
+      backup_code_details: z
+        .strictObject({
+          total: z.number(),
+          available: z.number(),
+          generated_at: z.string().nullable(),
+        })
         .nullable(),
     }),
   }),
@@ -91,7 +98,7 @@ const updateProfileDetailsV0ResponseZ = APIOutputZ.extend({
           user_profile_id: z.number(),
           user_profile_email_verified: z.string().nullable(),
           user_profile_phone_number: z.string().nullable(),
-        })
+        }),
       )
       .length(1),
     affected_count: z.number(),
@@ -127,7 +134,7 @@ const sendVerificationEmailV0ResponseZ = APIOutputZ.extend({
     z.strictObject({
       expires_at: z.string(),
       cooldown_reset_at: z.string(),
-    })
+    }),
   ),
 });
 type sendVerificationEmailV0Response = z.infer<
@@ -138,7 +145,7 @@ const validateEmailVerificationCodeV0ResponseZ = APIOutputZ.extend({
   data: z.nullable(
     z.strictObject({
       user_profile_email_verified: z.string(),
-    })
+    }),
   ),
 });
 type validateEmailVerificationCodeV0Response = z.infer<
