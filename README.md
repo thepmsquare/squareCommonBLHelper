@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v9.3.1
+
+- AuthenticationCommonBL:
+  - fix type of backup_code_details in GetUserDetailsV0ResponseZ.
+
 ### v9.3.0
 
 - AuthenticationCommonBL:

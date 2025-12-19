@@ -45,7 +45,7 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
         .strictObject({
           total: z.number(),
           available: z.number(),
-          generated_at: z.string().nullable(),
+          generated_at: z.string(),
         })
         .nullable(),
     }),
