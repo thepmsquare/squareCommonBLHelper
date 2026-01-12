@@ -8,12 +8,12 @@ import {
   LogoutAllV0ResponseZ,
   LogoutAppsV0ResponseZ,
   RecoveryMethodEnum,
-  sendResetPasswordEmailV0ResponseZ,
-  sendVerificationEmailV0ResponseZ,
-  updateProfileDetailsV0ResponseZ,
+  SendResetPasswordEmailV0ResponseZ,
+  SendVerificationEmailV0ResponseZ,
+  UpdateProfileDetailsV0ResponseZ,
   UpdateUsernameV0ResponseZ,
-  updateUserRecoveryMethodsV0ResponseZ,
-  validateEmailVerificationCodeV0ResponseZ,
+  UpdateUserRecoveryMethodsV0ResponseZ,
+  ValidateEmailVerificationCodeV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationCommonBL {
@@ -33,7 +33,7 @@ class AuthenticationCommonBL {
         // body
         { password: password },
         // query params
-        undefined
+        undefined,
       );
       return DeleteUserV0ResponseZ.parse(data);
     } catch (error) {
@@ -54,7 +54,7 @@ class AuthenticationCommonBL {
         // body
         undefined,
         // query params
-        { new_username: newUsername }
+        { new_username: newUsername },
       );
       return UpdateUsernameV0ResponseZ.parse(data);
     } catch (error) {
@@ -75,7 +75,7 @@ class AuthenticationCommonBL {
         // body
         undefined,
         // query params
-        undefined
+        undefined,
       );
       return GetUserDetailsV0ResponseZ.parse(data);
     } catch (error) {
@@ -96,7 +96,7 @@ class AuthenticationCommonBL {
         // body
         undefined,
         // query params
-        undefined
+        undefined,
       );
       return LogoutAllV0ResponseZ.parse(data);
     } catch (error) {
@@ -117,7 +117,7 @@ class AuthenticationCommonBL {
         // body
         { app_names: appNames },
         // query params
-        undefined
+        undefined,
       );
       return LogoutAppsV0ResponseZ.parse(data);
     } catch (error) {
@@ -138,13 +138,14 @@ class AuthenticationCommonBL {
         // body
         undefined,
         // query params
-        undefined
+        undefined,
       );
       return data;
     } catch (error) {
       throw error;
     }
   }
+
   async updateUserProfilePhotoV0(accessToken: string, profilePhoto?: File) {
     try {
       const MAX_SIZE = 5 * 1024 * 1024; // 5 MiB
@@ -174,7 +175,7 @@ class AuthenticationCommonBL {
         // body
         formData,
         // query params
-        undefined
+        undefined,
       );
       return data;
     } catch (error) {
@@ -196,7 +197,7 @@ class AuthenticationCommonBL {
         // body
         undefined,
         // query params
-        undefined
+        undefined,
       );
       return GenerateAccountBackupCodeV0ResponseZ.parse(data);
     } catch (error) {
@@ -210,7 +211,7 @@ class AuthenticationCommonBL {
     lastName?: string,
     email?: string,
     phoneNumberCountryCode?: string,
-    phoneNumber?: string
+    phoneNumber?: string,
   ) {
     try {
       const queryParams: Record<string, string> = {};
@@ -235,9 +236,9 @@ class AuthenticationCommonBL {
         // body
         undefined,
         // query params
-        queryParams
+        queryParams,
       );
-      return updateProfileDetailsV0ResponseZ.parse(data);
+      return UpdateProfileDetailsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
@@ -256,9 +257,9 @@ class AuthenticationCommonBL {
         // body
         { username: username },
         // query params
-        undefined
+        undefined,
       );
-      return sendResetPasswordEmailV0ResponseZ.parse(data);
+      return SendResetPasswordEmailV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
@@ -266,7 +267,7 @@ class AuthenticationCommonBL {
   async updateUserRecoveryMethodsV0(
     accessToken: string,
     recoveryMethodsToAdd?: RecoveryMethodEnum[],
-    recoveryMethodsToRemove?: RecoveryMethodEnum[]
+    recoveryMethodsToRemove?: RecoveryMethodEnum[],
   ) {
     try {
       if (!recoveryMethodsToAdd) {
@@ -290,9 +291,9 @@ class AuthenticationCommonBL {
           recovery_methods_to_remove: recoveryMethodsToRemove,
         },
         // query params
-        undefined
+        undefined,
       );
-      return updateUserRecoveryMethodsV0ResponseZ.parse(data);
+      return UpdateUserRecoveryMethodsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
@@ -311,16 +312,16 @@ class AuthenticationCommonBL {
         // body
         undefined,
         // query params
-        undefined
+        undefined,
       );
-      return sendVerificationEmailV0ResponseZ.parse(data);
+      return SendVerificationEmailV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
   async validateEmailVerificationCodeV0(
     accessToken: string,
-    verificationCode: string
+    verificationCode: string,
   ) {
     try {
       const data = await fetchJSONData(
@@ -335,9 +336,9 @@ class AuthenticationCommonBL {
         // body
         { verification_code: verificationCode },
         // query params
-        undefined
+        undefined,
       );
-      return validateEmailVerificationCodeV0ResponseZ.parse(data);
+      return ValidateEmailVerificationCodeV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
@@ -357,7 +358,7 @@ class AuthenticationCommonBL {
         // body
         undefined,
         // query params
-        { username: username }
+        { username: username },
       );
       return GetUserRecoveryMethodsV0ResponseZ.parse(data);
     } catch (error) {

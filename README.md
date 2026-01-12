@@ -15,6 +15,16 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v10.0.0
+
+- AuthenticationCommonBL:
+  - **breaking change**, rename the following types to match the standard naming convention:
+    - UpdateProfileDetailsV0ResponseZ
+    - SendResetPasswordEmailV0ResponseZ
+    - UpdateUserRecoveryMethodsV0ResponseZ
+    - SendVerificationEmailV0ResponseZ
+    - ValidateEmailVerificationCodeV0ResponseZ
+
 ### v9.3.1
 
 - AuthenticationCommonBL:

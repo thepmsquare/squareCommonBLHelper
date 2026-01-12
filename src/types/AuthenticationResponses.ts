@@ -84,7 +84,7 @@ type GenerateAccountBackupCodeV0Response = z.infer<
   typeof GenerateAccountBackupCodeV0ResponseZ
 >;
 
-const updateProfileDetailsV0ResponseZ = APIOutputZ.extend({
+const UpdateProfileDetailsV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z
       .array(
@@ -105,31 +105,31 @@ const updateProfileDetailsV0ResponseZ = APIOutputZ.extend({
   }),
 });
 
-type updateProfileDetailsV0Response = z.infer<
-  typeof updateProfileDetailsV0ResponseZ
+type UpdateProfileDetailsV0Response = z.infer<
+  typeof UpdateProfileDetailsV0ResponseZ
 >;
 
-const sendResetPasswordEmailV0ResponseZ = APIOutputZ.extend({
+const SendResetPasswordEmailV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     expires_at: z.string(),
     cooldown_reset_at: z.string(),
   }),
 });
 
-type sendResetPasswordEmailV0Response = z.infer<
-  typeof sendResetPasswordEmailV0ResponseZ
+type SendResetPasswordEmailV0Response = z.infer<
+  typeof SendResetPasswordEmailV0ResponseZ
 >;
 
-const updateUserRecoveryMethodsV0ResponseZ = APIOutputZ.extend({
+const UpdateUserRecoveryMethodsV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z.array(RecoveryMethodEnumZ),
   }),
 });
-type updateUserRecoveryMethodsV0Response = z.infer<
-  typeof updateUserRecoveryMethodsV0ResponseZ
+type UpdateUserRecoveryMethodsV0Response = z.infer<
+  typeof UpdateUserRecoveryMethodsV0ResponseZ
 >;
 
-const sendVerificationEmailV0ResponseZ = APIOutputZ.extend({
+const SendVerificationEmailV0ResponseZ = APIOutputZ.extend({
   data: z.nullable(
     z.strictObject({
       expires_at: z.string(),
@@ -137,19 +137,19 @@ const sendVerificationEmailV0ResponseZ = APIOutputZ.extend({
     }),
   ),
 });
-type sendVerificationEmailV0Response = z.infer<
-  typeof sendVerificationEmailV0ResponseZ
+type SendVerificationEmailV0Response = z.infer<
+  typeof SendVerificationEmailV0ResponseZ
 >;
 
-const validateEmailVerificationCodeV0ResponseZ = APIOutputZ.extend({
+const ValidateEmailVerificationCodeV0ResponseZ = APIOutputZ.extend({
   data: z.nullable(
     z.strictObject({
       user_profile_email_verified: z.string(),
     }),
   ),
 });
-type validateEmailVerificationCodeV0Response = z.infer<
-  typeof validateEmailVerificationCodeV0ResponseZ
+type ValidateEmailVerificationCodeV0Response = z.infer<
+  typeof ValidateEmailVerificationCodeV0ResponseZ
 >;
 const GetUserRecoveryMethodsV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
@@ -174,18 +174,18 @@ export {
   LogoutAppsV0ResponseZ,
   GenerateAccountBackupCodeV0Response,
   GenerateAccountBackupCodeV0ResponseZ,
-  updateProfileDetailsV0ResponseZ,
-  updateProfileDetailsV0Response,
-  sendResetPasswordEmailV0ResponseZ,
-  sendResetPasswordEmailV0Response,
+  UpdateProfileDetailsV0ResponseZ,
+  UpdateProfileDetailsV0Response,
+  SendResetPasswordEmailV0ResponseZ,
+  SendResetPasswordEmailV0Response,
   RecoveryMethodEnumZ,
   RecoveryMethodEnum,
-  updateUserRecoveryMethodsV0ResponseZ,
-  updateUserRecoveryMethodsV0Response,
-  sendVerificationEmailV0ResponseZ,
-  sendVerificationEmailV0Response,
-  validateEmailVerificationCodeV0ResponseZ,
-  validateEmailVerificationCodeV0Response,
+  UpdateUserRecoveryMethodsV0ResponseZ,
+  UpdateUserRecoveryMethodsV0Response,
+  SendVerificationEmailV0ResponseZ,
+  SendVerificationEmailV0Response,
+  ValidateEmailVerificationCodeV0ResponseZ,
+  ValidateEmailVerificationCodeV0Response,
   GetUserRecoveryMethodsV0ResponseZ,
   GetUserRecoveryMethodsV0Response,
 };
