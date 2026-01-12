@@ -12,6 +12,7 @@ import {
   SendVerificationEmailV0ResponseZ,
   UpdateProfileDetailsV0ResponseZ,
   UpdateUsernameV0ResponseZ,
+  UpdateUserProfilePhotoV0ResponseZ,
   UpdateUserRecoveryMethodsV0ResponseZ,
   ValidateEmailVerificationCodeV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
@@ -177,7 +178,7 @@ class AuthenticationCommonBL {
         // query params
         undefined,
       );
-      return data;
+      return UpdateUserProfilePhotoV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

@@ -161,6 +161,14 @@ type GetUserRecoveryMethodsV0Response = z.infer<
   typeof GetUserRecoveryMethodsV0ResponseZ
 >;
 
+const UpdateUserProfilePhotoV0ResponseZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.string().nullable(),
+  }),
+});
+type UpdateUserProfilePhotoV0Response = z.infer<
+  typeof UpdateUserProfilePhotoV0ResponseZ
+>;
 export {
   UpdateUsernameV0ResponseZ,
   UpdateUsernameV0Response,
@@ -188,4 +196,6 @@ export {
   ValidateEmailVerificationCodeV0Response,
   GetUserRecoveryMethodsV0ResponseZ,
   GetUserRecoveryMethodsV0Response,
+  UpdateUserProfilePhotoV0ResponseZ,
+  UpdateUserProfilePhotoV0Response,
 };

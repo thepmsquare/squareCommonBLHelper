@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v10.1.0
+
+- AuthenticationCommonBL:
+  - add UpdateUserProfilePhotoV0ResponseZ.
+
 ### v10.0.0
 
 - AuthenticationCommonBL:
