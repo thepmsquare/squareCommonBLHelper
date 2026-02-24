@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v11.0.0
+
+- AuthenticationCommonBL:
+  - UpdateUserProfilePhotoV0Response now compatible with square_common_bl>=7.0.0
+
 ### v10.1.0
 
 - AuthenticationCommonBL:
