@@ -150,15 +150,19 @@ type ValidateEmailVerificationCodeV0Response = z.infer<
 const GetUserRecoveryMethodsV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z.record(RecoveryMethodEnumZ, z.boolean()),
-    email_recovery_details: z.strictObject({
-      expires_at: z.string(),
-      cooldown_reset_at: z.string(),
-    }),
-    backup_code_details: z.strictObject({
-      total: z.number(),
-      available: z.number(),
-      generated_at: z.string(),
-    }),
+    email_recovery_details: z
+      .strictObject({
+        expires_at: z.string(),
+        cooldown_reset_at: z.string(),
+      })
+      .nullable(),
+    backup_code_details: z
+      .strictObject({
+        total: z.number(),
+        available: z.number(),
+        generated_at: z.string(),
+      })
+      .nullable(),
   }),
 });
 
