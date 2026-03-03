@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v11.1.0
+
+- all:
+  - add new optional parameter logErrors to all methods.
+
 ### v11.0.0
 
 - AuthenticationCommonBL:

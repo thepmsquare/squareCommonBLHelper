@@ -7,7 +7,8 @@ class GreetingCommonBL {
 
   async createAnonymousGreetingV0(
     greetingAnonymousSenderName?: string,
-    greetingText?: string
+    greetingText?: string,
+    logErrors: boolean = true,
   ) {
     try {
       const data = await fetchJSONData(
@@ -18,7 +19,10 @@ class GreetingCommonBL {
         {
           greeting_anonymous_sender_name: greetingAnonymousSenderName,
           greeting_text: greetingText,
-        }
+        },
+        undefined,
+        undefined,
+        logErrors,
       );
       return CreateAnonymousGreetingV0ResponseZ.parse(data);
     } catch (error) {

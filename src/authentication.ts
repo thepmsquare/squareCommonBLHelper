@@ -20,7 +20,11 @@ import {
 class AuthenticationCommonBL {
   constructor(private commonBLBaseURL: string = "http://localhost:10110") {}
 
-  async deleteUserV0(accessToken: string, password: string) {
+  async deleteUserV0(
+    accessToken: string,
+    password: string,
+    logErrors: boolean = true,
+  ) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -35,13 +39,21 @@ class AuthenticationCommonBL {
         { password: password },
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return DeleteUserV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
-  async updateUsernameV0(accessToken: string, newUsername: string) {
+  async updateUsernameV0(
+    accessToken: string,
+    newUsername: string,
+    logErrors: boolean = true,
+  ) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -56,13 +68,17 @@ class AuthenticationCommonBL {
         undefined,
         // query params
         { new_username: newUsername },
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return UpdateUsernameV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
-  async getUserDetailsV0(accessToken: string) {
+  async getUserDetailsV0(accessToken: string, logErrors: boolean = true) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -77,13 +93,17 @@ class AuthenticationCommonBL {
         undefined,
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return GetUserDetailsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
-  async logoutAllV0(accessToken: string) {
+  async logoutAllV0(accessToken: string, logErrors: boolean = true) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -98,13 +118,21 @@ class AuthenticationCommonBL {
         undefined,
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return LogoutAllV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
-  async logoutAppsV0(accessToken: string, appNames: string[]) {
+  async logoutAppsV0(
+    accessToken: string,
+    appNames: string[],
+    logErrors: boolean = true,
+  ) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -119,13 +147,17 @@ class AuthenticationCommonBL {
         { app_names: appNames },
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return LogoutAppsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
-  async getUserProfilePhotoV0(accessToken: string) {
+  async getUserProfilePhotoV0(accessToken: string, logErrors: boolean = true) {
     try {
       const data = await fetchFileData(
         // base url
@@ -140,6 +172,10 @@ class AuthenticationCommonBL {
         undefined,
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return data;
     } catch (error) {
@@ -147,7 +183,11 @@ class AuthenticationCommonBL {
     }
   }
 
-  async updateUserProfilePhotoV0(accessToken: string, profilePhoto?: File) {
+  async updateUserProfilePhotoV0(
+    accessToken: string,
+    profilePhoto?: File,
+    logErrors: boolean = true,
+  ) {
     try {
       const MAX_SIZE = 5 * 1024 * 1024; // 5 MiB
       const ALLOWED_TYPES = ["image/png", "image/jpeg"];
@@ -177,6 +217,10 @@ class AuthenticationCommonBL {
         formData,
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return UpdateUserProfilePhotoV0ResponseZ.parse(data);
     } catch (error) {
@@ -184,7 +228,10 @@ class AuthenticationCommonBL {
     }
   }
 
-  async generateAccountBackupCodesV0(accessToken: string) {
+  async generateAccountBackupCodesV0(
+    accessToken: string,
+    logErrors: boolean = true,
+  ) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -199,6 +246,10 @@ class AuthenticationCommonBL {
         undefined,
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return GenerateAccountBackupCodeV0ResponseZ.parse(data);
     } catch (error) {
@@ -213,6 +264,7 @@ class AuthenticationCommonBL {
     email?: string,
     phoneNumberCountryCode?: string,
     phoneNumber?: string,
+    logErrors: boolean = true,
   ) {
     try {
       const queryParams: Record<string, string> = {};
@@ -238,13 +290,17 @@ class AuthenticationCommonBL {
         undefined,
         // query params
         queryParams,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return UpdateProfileDetailsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
-  async sendResetPasswordEmailV0(username: string) {
+  async sendResetPasswordEmailV0(username: string, logErrors: boolean = true) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -259,6 +315,10 @@ class AuthenticationCommonBL {
         { username: username },
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return SendResetPasswordEmailV0ResponseZ.parse(data);
     } catch (error) {
@@ -269,6 +329,7 @@ class AuthenticationCommonBL {
     accessToken: string,
     recoveryMethodsToAdd?: RecoveryMethodEnum[],
     recoveryMethodsToRemove?: RecoveryMethodEnum[],
+    logErrors: boolean = true,
   ) {
     try {
       if (!recoveryMethodsToAdd) {
@@ -293,13 +354,20 @@ class AuthenticationCommonBL {
         },
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return UpdateUserRecoveryMethodsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
-  async sendVerificationEmailV0(accessToken: string) {
+  async sendVerificationEmailV0(
+    accessToken: string,
+    logErrors: boolean = true,
+  ) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -314,6 +382,10 @@ class AuthenticationCommonBL {
         undefined,
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return SendVerificationEmailV0ResponseZ.parse(data);
     } catch (error) {
@@ -323,6 +395,7 @@ class AuthenticationCommonBL {
   async validateEmailVerificationCodeV0(
     accessToken: string,
     verificationCode: string,
+    logErrors: boolean = true,
   ) {
     try {
       const data = await fetchJSONData(
@@ -338,6 +411,10 @@ class AuthenticationCommonBL {
         { verification_code: verificationCode },
         // query params
         undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return ValidateEmailVerificationCodeV0ResponseZ.parse(data);
     } catch (error) {
@@ -345,7 +422,7 @@ class AuthenticationCommonBL {
     }
   }
 
-  async getUserRecoveryMethodsV0(username: string) {
+  async getUserRecoveryMethodsV0(username: string, logErrors: boolean = true) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -360,6 +437,10 @@ class AuthenticationCommonBL {
         undefined,
         // query params
         { username: username },
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
       );
       return GetUserRecoveryMethodsV0ResponseZ.parse(data);
     } catch (error) {
