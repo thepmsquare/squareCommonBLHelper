@@ -15,6 +15,11 @@ helper for common bl for my projects.
 
 ## changelog
 
+### v11.2.0
+
+- AuthenticationCommonBL:
+  - update getUserRecoveryMethodsV0 response type.
+
 ### v11.1.0
 
 - all:

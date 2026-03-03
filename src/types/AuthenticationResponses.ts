@@ -146,9 +146,19 @@ const ValidateEmailVerificationCodeV0ResponseZ = APIOutputZ.extend({
 type ValidateEmailVerificationCodeV0Response = z.infer<
   typeof ValidateEmailVerificationCodeV0ResponseZ
 >;
+
 const GetUserRecoveryMethodsV0ResponseZ = APIOutputZ.extend({
   data: z.strictObject({
     main: z.record(RecoveryMethodEnumZ, z.boolean()),
+    email_recovery_details: z.strictObject({
+      expires_at: z.string(),
+      cooldown_reset_at: z.string(),
+    }),
+    backup_code_details: z.strictObject({
+      total: z.number(),
+      available: z.number(),
+      generated_at: z.string(),
+    }),
   }),
 });
 
