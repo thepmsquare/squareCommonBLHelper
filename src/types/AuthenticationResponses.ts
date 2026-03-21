@@ -48,6 +48,7 @@ const GetUserDetailsV0ResponseZ = APIOutputZ.extend({
           generated_at: z.string(),
         })
         .nullable(),
+      auth_providers: z.array(z.string()),
     }),
   }),
 });
