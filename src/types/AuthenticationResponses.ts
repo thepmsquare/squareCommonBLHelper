@@ -179,6 +179,29 @@ const UpdateUserProfilePhotoV0ResponseZ = APIOutputZ.extend({
 type UpdateUserProfilePhotoV0Response = z.infer<
   typeof UpdateUserProfilePhotoV0ResponseZ
 >;
+
+const AddSelfAuthProviderV0ResponseZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.array(z.string()),
+  }),
+});
+type AddSelfAuthProviderV0Response = z.infer<typeof AddSelfAuthProviderV0ResponseZ>;
+
+const AddGoogleAuthProviderV0ResponseZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.array(z.string()),
+  }),
+});
+type AddGoogleAuthProviderV0Response = z.infer<
+  typeof AddGoogleAuthProviderV0ResponseZ
+>;
+
+const UnlinkAuthProviderV0ResponseZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.array(z.string()),
+  }),
+});
+type UnlinkAuthProviderV0Response = z.infer<typeof UnlinkAuthProviderV0ResponseZ>;
 export {
   UpdateUsernameV0ResponseZ,
   UpdateUsernameV0Response,
@@ -208,4 +231,10 @@ export {
   GetUserRecoveryMethodsV0Response,
   UpdateUserProfilePhotoV0ResponseZ,
   UpdateUserProfilePhotoV0Response,
+  AddSelfAuthProviderV0ResponseZ,
+  AddSelfAuthProviderV0Response,
+  AddGoogleAuthProviderV0ResponseZ,
+  AddGoogleAuthProviderV0Response,
+  UnlinkAuthProviderV0ResponseZ,
+  UnlinkAuthProviderV0Response,
 };

@@ -1,4 +1,9 @@
 # changelog
+
+## v11.4.0
+
+- add `addSelfAuthProviderV0`, `addGoogleAuthProviderV0`, `unlinkAuthProviderV0`.
+- update `sendVerificationEmailV0` and `sendResetPasswordEmailV0` to accept optional `redirectUrl`.
  
 ## v11.3.0
  

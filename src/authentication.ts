@@ -15,6 +15,9 @@ import {
   UpdateUserProfilePhotoV0ResponseZ,
   UpdateUserRecoveryMethodsV0ResponseZ,
   ValidateEmailVerificationCodeV0ResponseZ,
+  AddSelfAuthProviderV0ResponseZ,
+  AddGoogleAuthProviderV0ResponseZ,
+  UnlinkAuthProviderV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationCommonBL {
@@ -300,7 +303,11 @@ class AuthenticationCommonBL {
       throw error;
     }
   }
-  async sendResetPasswordEmailV0(username: string, logErrors: boolean = true) {
+  async sendResetPasswordEmailV0(
+    username: string,
+    redirectUrl?: string,
+    logErrors: boolean = true,
+  ) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -312,7 +319,7 @@ class AuthenticationCommonBL {
         // headers
         undefined,
         // body
-        { username: username },
+        { username: username, redirect_url: redirectUrl },
         // query params
         undefined,
         // credentials
@@ -366,6 +373,7 @@ class AuthenticationCommonBL {
   }
   async sendVerificationEmailV0(
     accessToken: string,
+    redirectUrl?: string,
     logErrors: boolean = true,
   ) {
     try {
@@ -379,7 +387,7 @@ class AuthenticationCommonBL {
         // headers
         { access_token: accessToken },
         // body
-        undefined,
+        { redirect_url: redirectUrl },
         // query params
         undefined,
         // credentials
@@ -443,6 +451,96 @@ class AuthenticationCommonBL {
         logErrors,
       );
       return GetUserRecoveryMethodsV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async addSelfAuthProviderV0(
+    accessToken: string,
+    password: string,
+    logErrors: boolean = true,
+  ) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "add_self_auth_provider/v0",
+        // method
+        "POST",
+        // headers
+        { access_token: accessToken },
+        // body
+        { password: password },
+        // query params
+        undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
+      );
+      return AddSelfAuthProviderV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async addGoogleAuthProviderV0(
+    accessToken: string,
+    googleIdToken: string,
+    logErrors: boolean = true,
+  ) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "add_google_auth_provider/v0",
+        // method
+        "POST",
+        // headers
+        { access_token: accessToken },
+        // body
+        { google_id_token: googleIdToken },
+        // query params
+        undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
+      );
+      return AddGoogleAuthProviderV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async unlinkAuthProviderV0(
+    accessToken: string,
+    authProvider: string,
+    logErrors: boolean = true,
+  ) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.commonBLBaseURL,
+        // endpoint
+        "unlink_auth_provider/v0",
+        // method
+        "POST",
+        // headers
+        { access_token: accessToken },
+        // body
+        { auth_provider: authProvider },
+        // query params
+        undefined,
+        // credentials
+        undefined,
+        // logErrors
+        logErrors,
+      );
+      return UnlinkAuthProviderV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
